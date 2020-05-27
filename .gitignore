@@ -1,0 +1,7 @@
+*.img
+*.bak*
+*.rpm
+logs/
+mnt/
+tmp/
+release/

@@ -1,0 +1,11 @@
+--- bootloader.py.orig	2019-09-24 20:43:51.000000000 +0900
++++ bootloader.py	2020-05-26 19:03:36.233528914 +0900
+@@ -2391,7 +2391,7 @@
+     stage1_device_types = ["disk"]
+ 
+     # stage2 device requirements
+-    stage2_format_types = ["ext4", "ext3", "ext2"]
++    stage2_format_types = ["ext4", "ext3", "ext2", "vfat"]
+     stage2_device_types = ["partition"]
+     stage2_bootable = True
+ 

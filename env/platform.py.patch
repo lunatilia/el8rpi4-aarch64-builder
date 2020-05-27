@@ -1,0 +1,22 @@
+--- platform.py.orig	2018-11-09 18:27:59.000000000 +0900
++++ platform.py	2020-05-27 10:55:55.802555429 +0900
+@@ -74,6 +74,10 @@
+                             "disklabel %s instead.", disklabel_types[0])
+             else:
+                 disklabel_class.set_default_label_type("gpt")
++        else:
++            disklabel_class = get_device_format_class("disklabel")
++            disklabel_types = disklabel_class.get_platform_label_types()
++            disklabel_class.set_default_label_type("msdos")
+ 
+     def __call__(self):
+         return self
+@@ -288,6 +292,7 @@
+     elif arch.is_arm():
+         return ARM()
+     else:
+-        raise SystemError("Could not determine system architecture.")
++        return ARM()
++#        raise SystemError("Could not determine system architecture.")
+ 
+ platform = get_platform()
