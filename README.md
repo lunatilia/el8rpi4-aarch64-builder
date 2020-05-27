@@ -12,33 +12,30 @@ c8rpi4-aarch64-builder は、CentOS Userland 8 for Raspberry Pi 4 (aarch64) の�
 - root権限
 - lorax-lmc-novirt、git、epel-release、mock、patch および依存パッケージ
 
-### srpm からのビルドと、ディスクイメージ作成の実行例
+### srpm からのカーネルビルドと、ディスクイメージ作成の実行例
 
 #### 準備
 
 ```
-# yum install git patch lorax-lmc-novirt
+# yum install git patch lorax-lmc-novirt epel-release
 # git clone https://github.com/lunatilia/c8rpi4-aarch64-builder
 # cd c8rpi4-aarch64-builder
-# yum install epel-release
 # yum install mock
-# mock -r centos-stream-aarch64 --init
-```
-
-#### srpm からの centos-release と raspberrypi2 のビルド
-
-- centos-release-\*.el8.src.rpm と raspberrypi2-\*.src.rpm は、ソースから事前に作成
-
-```
+# usermod -a -G mock <user>
 # mkdir -p /centos/8/{SRPMS,aarch64}
-# mock -r centos-stream-aarch64 rebuild centos-release-8.1-1.1911.0.9.el8.src.rpm
+```
+
+#### srpm からの raspberrypi2 のビルド
+
+- raspberrypi2-5.4.42-v8.1.el8.src.rpm は、ソースから事前に作成
+
+```
+# setenforce 0
+$ mock -r centos-stream-aarch64 --init
+$ mock -r centos-stream-aarch64 rebuild raspberrypi2-5.4.42-v8.1.el8.src.rpm
 # mv /var/lib/mock/centos-stream-aarch64/result/*.src.rpm /centos/8/SRPMS/
 # mv /var/lib/mock/centos-stream-aarch64/result/*.rpm /centos/8/aarch64/
-# mock -r centos-stream-aarch64 rebuild raspberrypi2-5.4.42-v8.1.el8.src.rpm
-# mv /var/lib/mock/centos-stream-aarch64/result/*.src.rpm /centos/8/SRPMS/
-# mv /var/lib/mock/centos-stream-aarch64/result/*.rpm /centos/8/aarch64/
-# mock -r centos-stream-aarch64 --clean
-# yum install createrepo
+# setenforce 1
 # createrepo /centos/8/aarch64/
 ```
 
@@ -49,7 +46,7 @@ c8rpi4-aarch64-builder は、CentOS Userland 8 for Raspberry Pi 4 (aarch64) の�
 ```
 
 ### ディスクイメージ
-- [ディスクイメージのダウンロード](https://github.com/lunatilia/c8rpi4-aarch64-builder/releases/tag/0.1.0-20200527)
+- [ディスクイメージのダウンロード](https://github.com/lunatilia/c8rpi4-aarch64-builder/releases/tag/0.1.1-20200528)
 
 ### ライセンス
 [GNU General Public License v2.0](https://github.com/lunatilia/c8rpi4-aarch64-builder/blob/master/LICENSE) (The CentOS Projectのデフォルトライセンス)
