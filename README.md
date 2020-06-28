@@ -2,7 +2,7 @@
 
 ### 内容
 c8rpi4-aarch64-builder は、CentOS Userland 8 for Raspberry Pi 4 (aarch64) のカスタムディスクイメージを作成するスクリプトです。  
-※2020年5月27日現在、Raspberry Pi 用の CentOS Userland 8 公式ディスクイメージは公開されていません。
+※2020年6月28日現在、Raspberry Pi 用の CentOS Userland 8 公式ディスクイメージは公開されていないようです。
 
 ### 要件
 - CentOS Userland 8 (aarch64) が稼働している Raspberry Pi 4 Model B
@@ -46,7 +46,7 @@ $ mock -r centos-stream-aarch64 rebuild raspberrypi2-5.4.42-v8.1.el8.src.rpm
 ```
 
 ### ディスクイメージ
-- [ディスクイメージのダウンロード](https://github.com/lunatilia/c8rpi4-aarch64-builder/releases/tag/0.1.1-20200528)
+- [ディスクイメージのダウンロード](https://github.com/lunatilia/c8rpi4-aarch64-builder/releases/tag/0.1.1-2020028)
 
 ### ライセンス
 [GNU General Public License v2.0](https://github.com/lunatilia/c8rpi4-aarch64-builder/blob/master/LICENSE) (The CentOS Projectのデフォルトライセンス)
