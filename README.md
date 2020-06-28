@@ -46,7 +46,7 @@ $ mock -r centos-stream-aarch64 rebuild raspberrypi2-5.4.42-v8.1.el8.src.rpm
 ```
 
 ### ディスクイメージ
-- [ディスクイメージのダウンロード](https://github.com/lunatilia/c8rpi4-aarch64-builder/releases/tag/0.1.1-20206028)
+- [ディスクイメージのダウンロード](https://github.com/lunatilia/c8rpi4-aarch64-builder/releases/tag/0.1.1-20200628)
 
 ### ライセンス
 [GNU General Public License v2.0](https://github.com/lunatilia/c8rpi4-aarch64-builder/blob/master/LICENSE) (The CentOS Projectのデフォルトライセンス)
