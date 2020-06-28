@@ -84,6 +84,6 @@ if [ ${ret} -ne 0 ]; then
 fi
 
 if [ -f ${release}/${imgfile} ]; then
-  finimgfile=CentOS-Userland-8-aarch64-RPi4-Minimal-1911-`date +%Y%m%d%H%M%S`.raw.img
+  finimgfile=CentOS-Userland-8-aarch64-RPi4-Minimal-2004-`date +%Y%m%d%H%M%S`.raw.img
   mv ${release}/${imgfile} ${release}/${finimgfile}
 fi
