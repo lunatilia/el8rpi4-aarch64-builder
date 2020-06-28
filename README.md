@@ -11,6 +11,7 @@ c8rpi4-aarch64-builder は、CentOS Userland 8 for Raspberry Pi 4 (aarch64) の�
 - 16 GB 以上の microSD
 - root権限
 - lorax-lmc-novirt、git、epel-release、mock、patch および依存パッケージ
+- 別途ビルドした raspberrypi2-kernel4、raspberrypi2-firmware パッケージ
 
 ### srpm からのカーネルビルドと、ディスクイメージ作成の実行例
 
