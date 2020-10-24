@@ -2,7 +2,7 @@
 
 ### 内容
 c8rpi4-aarch64-builder は、CentOS Userland 8 for Raspberry Pi 4 (aarch64) のカスタムディスクイメージを作成するスクリプトです。  
-※2020年7月28日現在、Raspberry Pi 用の CentOS Userland 8 公式ディスクイメージは公開されていないようです。
+※2020年10月24日現在、Raspberry Pi 用の CentOS Userland 8 公式ディスクイメージは公開されていないようです。
 
 ### 要件
 - CentOS Userland 8 (aarch64) が稼働している Raspberry Pi 4 Model B
@@ -28,12 +28,12 @@ c8rpi4-aarch64-builder は、CentOS Userland 8 for Raspberry Pi 4 (aarch64) の�
 
 #### srpm からの raspberrypi2 のビルド
 
-- raspberrypi2-5.4.53-v8.1.el8.src.rpm は、ソースから事前に作成
+- raspberrypi2-5.4.72-v8.1.el8.src.rpm は、ソースから事前に作成
 
 ```
 # setenforce 0
 $ mock -r centos-stream-aarch64 --init
-$ mock -r centos-stream-aarch64 rebuild raspberrypi2-5.4.53-v8.1.el8.src.rpm
+$ mock -r centos-stream-aarch64 rebuild raspberrypi2-5.4.72-v8.1.el8.src.rpm
 # mv /var/lib/mock/centos-stream-aarch64/result/*.src.rpm /centos/8/SRPMS/
 # mv /var/lib/mock/centos-stream-aarch64/result/*.rpm /centos/8/aarch64/
 # setenforce 1
@@ -47,7 +47,7 @@ $ mock -r centos-stream-aarch64 rebuild raspberrypi2-5.4.53-v8.1.el8.src.rpm
 ```
 
 ### ディスクイメージ
-- [ディスクイメージのダウンロード](https://github.com/lunatilia/c8rpi4-aarch64-builder/releases/tag/0.1.2-20200728)
+- [ディスクイメージのダウンロード](https://github.com/lunatilia/c8rpi4-aarch64-builder/releases/tag/0.1.2-20201024)
 
 ### ライセンス
 [GNU General Public License v2.0](https://github.com/lunatilia/c8rpi4-aarch64-builder/blob/master/LICENSE) (The CentOS Projectのデフォルトライセンス)
