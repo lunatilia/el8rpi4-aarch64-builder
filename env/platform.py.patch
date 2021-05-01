@@ -1,5 +1,5 @@
---- platform.py.orig	2018-11-09 18:27:59.000000000 +0900
-+++ platform.py	2020-05-27 10:55:55.802555429 +0900
+--- platform.py.orig	2020-05-27 13:53:25.000000000 +0900
++++ platform.py	2021-01-02 17:09:30.406953979 +0900
 @@ -74,6 +74,10 @@
                              "disklabel %s instead.", disklabel_types[0])
              else:
@@ -11,12 +11,28 @@
  
      def __call__(self):
          return self
-@@ -288,6 +292,7 @@
+@@ -261,6 +265,15 @@
+     _boot_stage1_missing_error = N_("You must include at least one MBR-formatted "
+                                     "disk as an install target.")
+ 
++class RPI4(Platform):
++    _boot_stage1_device_types = ["disk"]
++    _boot_mbr_description = N_("Master Boot Record")
++    _boot_descriptions = {"disk": _boot_mbr_description,
++                          "partition": Platform._boot_partition_description}
++
++    _boot_stage1_missing_error = N_("You must include at least one MBR-formatted "
++                                    "disk as an install target.")
++
+ 
+ def get_platform():
+     """Check the architecture of the system and return an instance of a
+@@ -294,6 +307,8 @@
+         return X86()
      elif arch.is_arm():
          return ARM()
++    elif arch.is_aarch64():
++        return RPI4()
      else:
--        raise SystemError("Could not determine system architecture.")
-+        return ARM()
-+#        raise SystemError("Could not determine system architecture.")
+         raise SystemError("Could not determine system architecture.")
  
- platform = get_platform()

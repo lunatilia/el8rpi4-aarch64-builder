@@ -1,0 +1,11 @@
+--- factory.py.orig	2020-05-27 13:53:25.000000000 +0900
++++ factory.py	2021-01-02 17:12:46.791571419 +0900
+@@ -146,4 +146,8 @@
+             from pyanaconda.modules.storage.bootloader.efi import ArmEFIGRUB
+             return ArmEFIGRUB
+ 
++        if platform_class is platform.RPI4:
++            from pyanaconda.modules.storage.bootloader.rpi4 import RPI4
++            return RPI4
++
+         return None
