@@ -1,17 +1,19 @@
 ## el8rpi4-aarch64-builder
 
 ### 内容
-el8rpi4-aarch64-builder は、下記のカスタムディスクイメージを作成するスクリプトです。  
-※2021年05月02日現在、Raspberry Pi 用の CentOS Userland 8 公式ディスクイメージは公開されていないようです。
+
+el8rpi4-aarch64-builder は、下記のカスタムOSイメージを作成する kickstart およびサンプルスクリプトです。  
+※2021年05月02日現在、Raspberry Pi 用の CentOS Userland 8 公式OSイメージは公開されていないようです。
 
 - CentOS Userland 8 for Raspberry Pi 4 (aarch64)
 - CentOS Userland Stream 8 for Raspberry Pi 4 (aarch64)
-- Rocky Linux 8 RC1 for Raspberry Pi 4 (aarch64) **TEST RELEASE**
+- Rocky Userland Linux 8 RC1 for Raspberry Pi 4 (aarch64) **TEST RELEASE**
 
 ### 要件
-- CentOS 8 (aarch64) が稼働している Raspberry Pi 4 Model B
-    - [CentOS - Raspberry PI 4 - CentOS Forums](https://forums.centos.org/viewtopic.php?f=55&t=73495)
-    - [開発者によるテスト用ディスクイメージ](https://people.centos.org/pgreco/CentOS-Userland-8-stream-aarch64-RaspberryPI-Minimal-4/)
+
+- CentOS Userland 8 (aarch64) が稼働している Raspberry Pi 4 Model B
+  - [CentOS - Raspberry PI 4 - CentOS Forums](https://forums.centos.org/viewtopic.php?f=55&t=73495)
+  - [開発者によるテスト用ディスクイメージ](https://people.centos.org/pgreco/CentOS-Userland-8-stream-aarch64-RaspberryPI-Minimal-4/)
 - 4 GB 以上の microSD (16 GB以上を推奨)
 - root権限
 - git、lorax-lmc-novirt、patch および依存パッケージ
@@ -24,7 +26,7 @@ el8rpi4-aarch64-builder は、下記のカスタムディスクイメージを�
 
 ```
 # yum install git patch lorax-lmc-novirt epel-release
-# git clone https://github.com/lunatilia/c8rpi4-aarch64-builder
+# git clone https://github.com/lunatilia/el8rpi4-aarch64-builder
 # cd c8rpi4-aarch64-builder
 # yum install mock
 # usermod -a -G mock <user>
@@ -52,17 +54,20 @@ $ mock -r centos-stream-8-aarch64 --clean
 - CentOS Userland 8 の場合
 
 ```
+# mv samples/c8rpi4-aarch64-builder .
 # ./c8rpi4-aarch64-builder kickstarts/c8rpi4-minimal-ks.cfg
 ```
 
 - CentOS Userland Stream 8 の場合
 
 ```
+# mv samples/c8srpi4-aarch64-builder .
 # ./c8srpi4-aarch64-builder kickstarts/c8srpi4-minimal-ks.cfg
 ```
 
 - Rocky Linux 8 の場合
 ```
+# mv samples/r8rpi4-aarch64-builder .
 # ./r8rpi4-aarch64-builder kickstarts/r8rpi4-minimal-ks.cfg
 ```
 
