@@ -5,9 +5,9 @@
 el8rpi4-aarch64-builder は、下記のカスタムOSイメージを作成する kickstart およびサンプルスクリプトです。  
 ※2021年05月02日現在、Raspberry Pi 用の CentOS Userland 8 公式OSイメージは公開されていないようです。
 
-- CentOS Userland 8 for Raspberry Pi 4 (aarch64)
-- CentOS Userland Stream 8 for Raspberry Pi 4 (aarch64)
-- Rocky Userland Linux 8 RC1 for Raspberry Pi 4 (aarch64) **TEST RELEASE**
+1. CentOS Userland 8 for Raspberry Pi 4 (aarch64)
+2. CentOS Userland Stream 8 for Raspberry Pi 4 (aarch64)
+3. Rocky Userland Linux 8 RC1 for Raspberry Pi 4 (aarch64) **TEST RELEASE**
 
 ### 要件
 
@@ -74,12 +74,12 @@ $ mock -r centos-stream-8-aarch64 --clean
 
 ### ディスクイメージ
 
-- [ディスクイメージのダウンロード](https://github.com/lunatilia/c8rpi4-aarch64-builder/releases/tag/0.3.0-20210502)
-  - Rocky Linux は公式が未だ Release Candidate 1 (RC1) なのでイメージは公開しません。 
+- [ディスクイメージのダウンロード](https://github.com/lunatilia/el8rpi4-aarch64-builder/releases/tag/0.3.0-20210502)
+  - Rocky Linux のOSイメージは除外
 
 ### ライセンス
 
-[GNU General Public License v2.0](https://github.com/lunatilia/c8rpi4-aarch64-builder/blob/master/LICENSE) (The CentOS Projectのデフォルトライセンス)
+[GNU General Public License v2.0](https://github.com/lunatilia/el8rpi4-aarch64-builder/blob/main/LICENSE) (The CentOS Projectのデフォルトライセンス)
 
 ### 参考
 
