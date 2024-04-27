@@ -79,7 +79,7 @@ $ mock -r centos-stream-8-aarch64 --clean
 
 ### ライセンス
 
-[GNU General Public License v2.0](https://github.com/lunatilia/el8rpi4-aarch64-builder/blob/main/LICENSE) (The CentOS Projectのデフォルトライセンス)
+[MIT License](https://github.com/lunatilia/el8rpi4-aarch64-builder/blob/main/LICENSE) (The CentOS Projectのデフォルトライセンス)
 
 ### 参考
 
